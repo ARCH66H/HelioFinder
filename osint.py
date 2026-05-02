@@ -115,6 +115,14 @@ def youtube(target):
 
     else:
         print(f" {ylw}[ {grn}✔{ylw} ] {grn}YouTube Found: {url}")
+def scratch(target):
+    url=f"https://scratch.mit.edu/users/{target}"
+    inp = requests.get(f"{url}").text
+    if "Not Found" in inp or "404" in inp:
+        print(f" {ylw}[ {red}✖{ylw} ] {red}Scratch Not Found")
+
+    else:
+        print(f" {ylw}[ {grn}✔{ylw} ] {grn}Scratch Found: {url}")
 def blogspot(target):
     url = f"https://{target}.blogspot.com"
     inp = requests.get(f"{url}").status_code
@@ -122,7 +130,7 @@ def blogspot(target):
         print(f" {ylw}[ {red}✖{ylw} ] {red}Blogspot Not Found")
 
     else:
-        print(f" {ylw}[ {grn}✔{ylw} ] {grn}Twitter Found: {url}")
+        print(f" {ylw}[ {grn}✔{ylw} ] {grn}Blogspot Found: {url}")
 def twitter(target):
     inp = {"input": target}
     header = {"content-type": "application/x-www-form-urlencoded; charset=UTF-8",
@@ -361,6 +369,7 @@ def catc():
             proton(target)
             xbox(target)
             hackernews(target)
+            input = input("Type to quit...")
         else:
             print("\033c")
             print(Colorate.Vertical(Colors.green_to_yellow, banner, 2))
@@ -392,6 +401,7 @@ def catc():
             proton(target)
             xbox(target)
             hackernews(target)
+            input = input("Type to quit...")
     except KeyboardInterrupt:
         print()
         print(termcolor.colored("\nYou Pressed The Exit Button!",'red'))
