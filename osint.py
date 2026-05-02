@@ -369,7 +369,7 @@ def catc():
             proton(target)
             xbox(target)
             hackernews(target)
-            input = input("Type to quit...")
+            input2 = input("Type to quit...")
         else:
             print("\033c")
             print(Colorate.Vertical(Colors.green_to_yellow, banner, 2))
@@ -401,7 +401,7 @@ def catc():
             proton(target)
             xbox(target)
             hackernews(target)
-            input = input("Type to quit...")
+            input1 = input("Type to quit...")
     except KeyboardInterrupt:
         print()
         print(termcolor.colored("\nYou Pressed The Exit Button!",'red'))
